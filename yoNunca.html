@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo Nunca</title>
+    <!-- Se elimina el CSS personalizado, solo Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-secondary bg-opacity-10">
+<div class="container d-flex flex-column align-items-center pt-5">
+    <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
+        <h1 class="mb-4 text-center">Yo Nunca</h1>
+        <form id="formCategorias" class="mb-3">
+            <label class="form-label mb-2">Selecciona las categorías de pregunta:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="clasico" name="categoria" value="clasico">
+                <label class="form-check-label" for="clasico">Clásico</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="picante" name="categoria" value="picante">
+                <label class="form-check-label" for="picante">Picante</label>
+            </div>
+        </form>
+        <button id="empezar" class="btn btn-success w-100 mb-3">Empezar</button>
+    <div id="pregunta" class="d-none mb-3"></div>
+    <button id="siguiente" class="btn btn-primary w-100 d-none mb-2">Siguiente</button>
+        <a href="index.html" class="btn btn-secondary w-100">Volver al inicio</a>
+    </div>
+</div>
+<script src="javascript/Preguntas.js"></script>
+</body>
+</html>

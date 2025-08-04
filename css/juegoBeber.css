@@ -1,0 +1,16 @@
+#oculto { display: none; }
+body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+#pregunta { font-size: 1.5em; margin: 30px 0; }
+#siguiente { padding: 10px 20px; font-size: 1em; }
+
+.btn-yonunca {
+    background-color: #8e44ad;
+    color: #fff;
+    border: none;
+}
+
+.btn-redflags {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+}
