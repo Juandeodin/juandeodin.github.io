@@ -1,15 +1,90 @@
+.titulo-categorias {
+    color: #27ae60;
+    font-size: 1.5em;
+    font-family: 'Luckiest Guy', cursive;
+    text-shadow: 1px 1px 6px #fff, 0 0 6px #8e44ad;
+    letter-spacing: 1px;
+}
+.titulo-festivo {
+    font-size: 3em;
+    font-family: 'Luckiest Guy', cursive;
+    color: #e74c3c;
+    text-shadow: 2px 2px 8px #fff, 0 0 10px #8e44ad;
+    letter-spacing: 2px;
+}
+.label-festivo {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.3em;
+    margin-left: 8px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+.btn-festivo, .btn-festivo:hover {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 6px #fff, 0 0 6px #8e44ad;
+    border-radius: 12px;
+}
+.checkbox-festivo.clasico {
+    accent-color: #8e44ad;
+}
+.label-festivo.clasico {
+    color: #8e44ad;
+}
+.checkbox-festivo.picante {
+    accent-color: #e74c3c;
+}
+.label-festivo.picante {
+    color: #e74c3c;
+}
+.checkbox-festivo.humor {
+    accent-color: green;
+}
+.label-festivo.humor {
+   accent-color: green;
+}
+.pregunta-grande {
+    font-size: 2em !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    display: block;
+}
+.btn-siguiente, .btn-siguiente:hover {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 20px;
+    gap: 8px;
+}
+
+.btn-empezar, .btn-empezar:hover {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 20px;
+    gap: 8px;
+}
 #oculto { display: none; }
-body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
-#pregunta { font-size: 1.5em; margin: 30px 0; }
 #siguiente { padding: 10px 20px; font-size: 1em; }
 
-.btn-yonunca {
+.btn-yonunca, .btn-yonunca:hover {
     background-color: #8e44ad;
     color: #fff;
     border: none;
 }
 
-.btn-redflags {
+.btn-redflags, .btn-redflags:hover {
     background-color: #e74c3c;
     color: #fff;
     border: none;
