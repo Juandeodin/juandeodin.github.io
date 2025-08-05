@@ -35,6 +35,15 @@ async function cargarPreguntas(juego) {
   document.getElementById("formCategorias").classList.add("d-none");
 }
 
+function cambiarPantalla(){
+
+    document.getElementById('pantalla-reglas').classList.add('d-none');
+    document.getElementById('btnContinuar').classList.add('d-none');
+    document.getElementById('pantalla-categorias').classList.remove('d-none');
+    document.getElementById('empezar').classList.remove('d-none');
+
+}
+
 
 
 function siguientePregunta() {

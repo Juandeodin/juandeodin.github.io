@@ -12,12 +12,12 @@
 <body class="bg-secondary bg-opacity-10" style="min-height: 100vh;">
 <div class="container-fluid d-flex flex-column min-vh-100">
     <div class="card p-4 shadow-lg main-card w-100 d-flex flex-column justify-content-between" style="max-width: 400px; height: 90vh; position: relative;">
-        <h1 class="mb-3 text-center titulo-festivo yonunca" style="margin-top:0;">Yo Nunca</h1>
+        <h1 class="mb-3 text-center titulo-festivo redflags" style="margin-top:0;">Red Flag</h1>
         <div id="pantalla-reglas">
             <div class="mb-4 fs-5 text-center" style="min-height: 120px;">
-                Cada jugador, por turnos, dice una frase empezando por <b>"Yo nunca..."</b>.<br>
-                Quien sí lo haya hecho, debe beber. <b>Reglas adicionales: </b> <br><i>Brindo por tu historia:</i> Si alguien bebe con una pregunta, otra persona puede
-                beber el doble que esa persona diciendo "Brindo por tu historia" y obligar a la otra persona a contar su historia.
+                Cada jugador, por turnos, dice una frase empezando por <b>"Red Flag..."</b>.<br>
+                <i>Se puede jugar de distintas maneras:</i> Pueden beber las personas que <b>tengan</b> dicha red flag o pueden beber las personas
+                que <b>hayan salido o salgan</b> con personas con esa red flag.<br>
             </div>           
         </div>
         <div id="pantalla-categorias" class="d-none">
@@ -25,16 +25,16 @@
                 <label class="form-label mb-2 titulo-categorias" for="yoNunca">categorías</label>
                 <div class="d-flex gap-3 w-100 justify-content-center">
                     <div class="d-flex align-items-center">
-                        <input class="form-check-input checkbox-festivo clasico" type="checkbox" id="sexual" name="categoria" value="sexual">
-                        <label class="form-check-label label-festivo clasico ms-2" for="sexual">Sexual</label>
+                        <input class="form-check-input checkbox-festivo clasico" type="checkbox" id="hombre" name="categoria" value="hombre">
+                        <label class="form-check-label label-festivo clasico ms-2" for="hombre">Hombres</label>
                     </div>
                     <div class="d-flex align-items-center">
-                        <input class="form-check-input checkbox-festivo picante" type="checkbox" id="amor" name="categoria" value="amor">
-                        <label class="form-check-label label-festivo picante ms-2" for="amor">Amor</label>
+                        <input class="form-check-input checkbox-festivo picante" type="checkbox" id="mujer" name="categoria" value="mujer">
+                        <label class="form-check-label label-festivo picante ms-2" for="mujer">Mujeres</label>
                     </div>
                     <div class="d-flex align-items-center">
-                        <input class="form-check-input checkbox-festivo humor" type="checkbox" id="humor" name="categoria" value="humor">
-                        <label class="form-check-label label-festivo humor ms-2" for="humor">Humor</label>
+                        <input class="form-check-input checkbox-festivo humor" type="checkbox" id="ambos" name="categoria" value="ambos">
+                        <label class="form-check-label label-festivo humor ms-2" for="ambos">Ambos</label>
                     </div>
                 </div>
             </form>
@@ -43,11 +43,11 @@
             <div id="pregunta" class="d-none mb-5 text-center pregunta-grande"></div>
         </div>
         <div class="d-flex justify-content-center">
-            <button id="empezar" class="btn btn-empezar btn-lg w-100 mb-3 btn-festivo d-none" onclick="cargarPreguntas('yoNunca')">Empezar</button>
-            <button id="siguiente" class="btn d-none mb-2 btn-siguiente yonunca btn-festivo" onclick="siguientePregunta()">
+            <button id="empezar" class="btn btn-siguiente redflags btn-lg w-100 mb-3 btn-festivo d-none" onclick="cargarPreguntas('redFlags')">Empezar</button>
+            <button id="siguiente" class="btn d-none mb-2 btn-siguiente redflags btn-festivo" onclick="siguientePregunta()">
                 <span>Siguiente</span>
             </button>
-            <button id="btnContinuar" class="btn btn-empezar btn-lg w-100 mb-3 btn-festivo" onclick = "cambiarPantalla()">Continuar</button>
+            <button id="btnContinuar" class="btn btn-siguiente redflags btn-lg w-100 mb-3 btn-festivo" onclick = "cambiarPantalla()">Continuar</button>
         </div>
         <a href="index.html" class="btn btn-secondary btn-sm position-absolute top-0 end-0 m-1">Inicio</a>
     </div>

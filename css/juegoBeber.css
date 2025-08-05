@@ -1,5 +1,5 @@
 .titulo-categorias {
-    color: #27ae60;
+    color: #000;
     font-size: 2em;
     font-family: 'Luckiest Guy', cursive;
     text-shadow: 1px 1px 6px #fff, 0 0 6px #8e44ad;
@@ -8,9 +8,15 @@
 .titulo-festivo {
     font-size: 3em;
     font-family: 'Luckiest Guy', cursive;
-    color: #e74c3c;
-    text-shadow: 2px 2px 8px #fff, 0 0 10px #8e44ad;
     letter-spacing: 2px;
+}
+.titulo-festivo.yonunca {
+    color: #8e44ad;
+    text-shadow: 2px 2px 8px #fff, 0 0 10px #8e44ad;
+}
+.titulo-festivo.redflags {
+    color: #e74c3c;
+    text-shadow: 2px 2px 8px #fff, 0 0 10px #e74c3c;
 }
 .label-festivo {
     font-family: 'Luckiest Guy', cursive;
@@ -58,12 +64,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e74c3c !important;
-    color: #000 !important;
-    border: none !important;
     box-shadow: 0 2px 8px #0002;
     border-radius: 20px;
     gap: 8px;
+}
+.btn-siguiente.yonunca{
+
+    background-color:#8e44ad !important;
+    color: #000 !important;
+    border: none !important;
+}
+.btn-siguiente.redflags{
+    
+    background-color:#e74c3c !important;
+    color: #000 !important;
+    border: none !important;
 }
 
 .btn-empezar, .btn-empezar:hover {
