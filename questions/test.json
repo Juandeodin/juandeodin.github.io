@@ -1,0 +1,29 @@
+[
+  {
+    "pregunta": "¿Qué cualidad valoras más?",
+    "respuestas": [
+      { "texto": "Valentía", "puntos": { "Gryffindor": 2, "Hufflepuff": 1 } },
+      { "texto": "Astucia", "puntos": { "Slytherin": 2, "Ravenclaw": 1 } },
+      { "texto": "Lealtad", "puntos": { "Hufflepuff": 2, "Gryffindor": 1 } },
+      { "texto": "Sabiduría", "puntos": { "Ravenclaw": 2, "Slytherin": 1 } }
+    ]
+  },
+  {
+    "pregunta": "¿Qué animal te gustaría tener como mascota?",
+    "respuestas": [
+      { "texto": "León", "puntos": { "Gryffindor": 2 } },
+      { "texto": "Serpiente", "puntos": { "Slytherin": 2 } },
+      { "texto": "Tejón", "puntos": { "Hufflepuff": 2 } },
+      { "texto": "Águila", "puntos": { "Ravenclaw": 2 } }
+    ]
+  },
+  {
+    "pregunta": "¿Qué asignatura te atrae más?",
+    "respuestas": [
+      { "texto": "Defensa contra las Artes Oscuras", "puntos": { "Gryffindor": 2 } },
+      { "texto": "Pociones", "puntos": { "Slytherin": 2 } },
+      { "texto": "Cuidado de Criaturas Mágicas", "puntos": { "Hufflepuff": 2 } },
+      { "texto": "Adivinación", "puntos": { "Ravenclaw": 2 } }
+    ]
+  }
+]
