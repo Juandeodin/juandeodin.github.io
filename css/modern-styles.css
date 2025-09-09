@@ -142,18 +142,6 @@ h4 { font-size: 1.5rem; }
     position: relative;
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--primary-gradient);
-    border-radius: var(--radius-sm);
-}
-
 /* Modern Button Styles */
 .modern-btn {
     display: inline-flex;
