@@ -43,9 +43,9 @@ git push origin main
 ### Testing Games
 ```bash
 # Test unified template games
-open "http://localhost:8000/game.html?game=yoNunca"
-open "http://localhost:8000/game.html?game=redFlags"
-open "http://localhost:8000/game.html?game=verdadReto"
+open "http://localhost:8000/drinkgame.html?game=yoNunca"
+open "http://localhost:8000/drinkgame.html?game=redFlags"
+open "http://localhost:8000/drinkgame.html?game=verdadReto"
 
 # Test independent games
 open "http://localhost:8000/memoryMatrix.html"
@@ -58,8 +58,8 @@ open "http://localhost:8000/index.html"
 
 ### File Structure
 ```
-├── index.html              # Main portfolio page
-├── game.html              # Unified template for all drinking games
+├── index.html              # Modern portfolio page with sections
+├── drinkgame.html         # Unified template for all drinking games
 ├── [legacy-game].html     # Legacy individual game pages (deprecated)
 ├── questions/              # Game data
 │   ├── *.csv              # Question/content files for drinking games
@@ -72,7 +72,8 @@ open "http://localhost:8000/index.html"
 │   ├── Preguntas.js       # Question handling utilities
 │   └── Buzzfeed.js        # Quiz game logic
 ├── css/
-│   ├── juegoBeber.css     # Shared styles for all games (responsive)
+│   ├── modern-styles.css  # Modern unified styles and design system
+│   ├── juegoBeber.css     # Game-specific styles (responsive)
 │   ├── memoryMatrix.css   # Memory game styles
 │   └── Buzzfeed.css       # Quiz game styles
 └── .vscode/               # VS Code configuration
@@ -80,10 +81,10 @@ open "http://localhost:8000/index.html"
 
 ### Game Architecture Pattern
 
-**Unified Template System**: All drinking games now use a single template (`game.html`) with URL parameters:
-- `game.html?game=yoNunca` - Yo Nunca game
-- `game.html?game=redFlags` - Red Flags game
-- `game.html?game=verdadReto` - Verdad o Reto game
+**Unified Template System**: All drinking games now use a single template (`drinkgame.html`) with URL parameters:
+- `drinkgame.html?game=yoNunca` - Yo Nunca game
+- `drinkgame.html?game=redFlags` - Red Flags game
+- `drinkgame.html?game=verdadReto` - Verdad o Reto game
 
 **Template Components**:
 1. **Screen Flow**: Rules → Category Selection → Game Play
@@ -117,25 +118,39 @@ open "http://localhost:8000/index.html"
 - Scoring system for Harry Potter house sorting
 - JSON-based question/answer data structure
 
-### Styling System
+### Modern Design System (`modern-styles.css`)
+
+**CSS Custom Properties**:
+- Comprehensive color palette with CSS variables
+- Gradient definitions for modern UI effects
+- Consistent spacing and typography scales
+- Shadow and border-radius system
 
 **Color Schemes**:
-- Yo Nunca: Purple (`#8e44ad`)
-- Red Flags: Red (`#e74c3c`) 
-- Verdad o Reto: Blue (`#3498db`)
-- Memory Matrix: Dark theme
+- Primary: `#2c3e50` (Dark Blue-Gray)
+- Secondary: `#3498db` (Blue)
+- Game Colors: Purple (`#8e44ad`), Red (`#e74c3c`), Blue (`#3498db`)
+- Gradients: Hero gradient, card gradient, button gradients
 
 **Typography**:
-- Headers: 'Luckiest Guy' (festive games)
-- Body: 'Montserrat' (questions/content)
-- Bootstrap 5.3.0 for layout system
+- Primary: 'Inter' (Modern, clean sans-serif)
+- Headings: 'Poppins' (Bold, friendly)
+- Fallbacks: 'Luckiest Guy' (Game titles)
+- Font sizes: Responsive scale (2.5rem to 1rem on mobile)
+
+**Components**:
+- `.modern-card` - Glassmorphism card design
+- `.modern-btn` - Enhanced button with hover effects
+- `.hero-section` - Gradient background with texture
+- `.section-title` - Centered titles with underline accent
+- Animation classes for scroll-triggered effects
 
 ## Adding New Games
 
 ### Drinking Game Pattern (Unified Template)
 1. Create CSV file in `questions/[game-name].csv`
 2. Add configuration to `gameConfigs` object in `javascript/gameConfig.js`
-3. Add game link to `index.html` using format: `game.html?game=[game-name]`
+3. Add game link to `index.html` using format: `drinkgame.html?game=[game-name]`
 4. Add color scheme CSS classes to `css/juegoBeber.css`
 
 **Example Game Configuration**:
@@ -179,12 +194,14 @@ newGame: {
 ## Technical Notes
 
 ### Bootstrap Integration
-- Uses Bootstrap 5.3.0 CDN
-- Custom classes override Bootstrap defaults
+- Uses Bootstrap 5.3.0 CDN with modern Google Fonts (Inter, Poppins)
+- Font Awesome 6.4.0 for consistent iconography
+- Modern CSS custom properties (CSS variables) design system
+- Glassmorphism and gradient effects for modern UI
 - Fully responsive design with mobile-first approach
-- Grid system used for button layouts on main page
-- Responsive game cards with proper centering
-- Mobile-optimized typography and spacing
+- Advanced CSS animations and transitions
+- Professional card-based layout system
+- Intersection Observer API for scroll animations
 
 ### Font Integration
 - Google Fonts CDN for custom typography
@@ -203,3 +220,19 @@ newGame: {
 ## Deployment
 
 This site is deployed via GitHub Pages. Any changes to the `main` branch will automatically deploy to the live site at the GitHub Pages URL.
+
+## Modern Design Features
+
+### User Experience Improvements
+- **Hero Section**: Eye-catching gradient background with professional introduction
+- **Card-based Layout**: Modern glassmorphism cards for games and projects
+- **Scroll Animations**: Intersection Observer API for smooth fade-in effects
+- **Professional About Section**: Skills showcase and contact information
+- **Responsive Design**: Mobile-first approach with optimized breakpoints
+
+### Visual Enhancements
+- **Modern Color Palette**: Professional gradients and consistent theming
+- **Typography Hierarchy**: Clear visual hierarchy with modern font stacks
+- **Interactive Elements**: Hover effects and smooth transitions
+- **Icon Integration**: Font Awesome icons for visual consistency
+- **Loading States**: Smooth animations and micro-interactions

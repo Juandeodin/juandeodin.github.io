@@ -1,49 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>JuanDeOdin</title>
+	<title>Juan de Odin - Developer Portfolio</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/modern-styles.css">
 	<link rel="stylesheet" href="css/juegoBeber.css">
-	<link href="styles.css" rel="stylesheet">
 </head>
-<body class="bg-secondary bg-opacity-10">
-<div class="container pt-5">
-	<div class="text-center p-4 mx-auto d-flex flex-column gap-2" style="background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 0 20px #0002; max-width: 500px;">
-		<h1 class="mb-3">Cosas de Juan</h1>
-		<h2>Juegos Web</h2>
-		<div class="row g-2 mb-3">
-			<div class="col-6 col-md-3">
-				<a href="game.html?game=yoNunca" class="btn btn-lg btn-yonunca w-100">Yo Nunca</a>
-			</div>
-			<div class="col-6 col-md-3">
-				<a href="game.html?game=redFlags" class="btn btn-lg btn-redflags w-100">Red Flag</a>
-			</div>
-			<div class="col-6 col-md-3">
-				<a href="memoryMatrix.html" class="btn btn-lg btn-dark w-100">Memory Matrix</a>
-			</div>
-			<div class="col-6 col-md-3">
-				<a href="game.html?game=verdadReto" class="btn btn-lg btn-primary w-100">Verdad o Reto</a>
+<body>
+	<!-- Hero Section -->
+	<section class="hero-section">
+		<div class="container">
+			<div class="hero-content">
+				<h1 class="hero-title fade-in">Juan de Odin</h1>
+				<p class="hero-subtitle fade-in stagger-1">Full-Stack Developer & Creative Coder</p>
+				<p class="fade-in stagger-2">Creando experiencias digitales únicas y juegos web interactivos</p>
 			</div>
 		</div>
-		<h2>Proyectos</h2>
-		<div class="row g-2">
-			<div class="col-12 col-md-4">
-				<a href="https://github.com/Guaaay/WordFight" class="btn btn-lg btn-outline-dark w-100" target="_blank" rel="noopener noreferrer">Word Fight</a>
-			</div>
-			<div class="col-12 col-md-4">
-				<a href="https://github.com/Juandeodin/Mblock-Programs" class="btn btn-lg btn-outline-dark w-100" target="_blank" rel="noopener noreferrer">Mblock Programs</a>
-			</div>
-			<div class="col-12 col-md-4">
-				<a href="https://juandeodin.itch.io/transverse" class="btn btn-lg btn-outline-dark w-100" target="_blank" rel="noopener noreferrer">Transverse</a>
+	</section>
+
+	<!-- Web Games Section -->
+	<section class="section">
+		<div class="container">
+			<h2 class="section-title fade-in">🎮 Juegos Web</h2>
+			<div class="row g-4">
+				<div class="col-6 col-lg-3">
+					<div class="modern-card p-3 h-100 fade-in stagger-1">
+						<div class="text-center">
+							<div class="mb-3">
+								<i class="fas fa-wine-glass-alt" style="font-size: 2.5rem; color: #8e44ad;"></i>
+							</div>
+							<h5 class="mb-2">Yo Nunca</h5>
+							<p class="text-muted small mb-3">Juego clásico para romper el hielo</p>
+							<a href="drinkgame.html?game=yoNunca" class="modern-btn btn-game-purple w-100">Jugar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="modern-card p-3 h-100 fade-in stagger-2">
+						<div class="text-center">
+							<div class="mb-3">
+								<i class="fas fa-flag" style="font-size: 2.5rem; color: #e74c3c;"></i>
+							</div>
+							<h5 class="mb-2">Red Flags</h5>
+							<p class="text-muted small mb-3">Descubre las señales de alarma</p>
+							<a href="drinkgame.html?game=redFlags" class="modern-btn btn-game-red w-100">Jugar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="modern-card p-3 h-100 fade-in stagger-3">
+						<div class="text-center">
+							<div class="mb-3">
+								<i class="fas fa-brain" style="font-size: 2.5rem; color: #2c3e50;"></i>
+							</div>
+							<h5 class="mb-2">Memory Matrix</h5>
+							<p class="text-muted small mb-3">Pon a prueba tu memoria</p>
+							<a href="memoryMatrix.html" class="modern-btn btn-game-dark w-100">Jugar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="modern-card p-3 h-100 fade-in stagger-4">
+						<div class="text-center">
+							<div class="mb-3">
+								<i class="fas fa-question-circle" style="font-size: 2.5rem; color: #3498db;"></i>
+							</div>
+							<h5 class="mb-2">Verdad o Reto</h5>
+							<p class="text-muted small mb-3">El clásico juego de preguntas</p>
+							<a href="drinkgame.html?game=verdadReto" class="modern-btn btn-game-blue w-100">Jugar</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!-- <div>
-			<h2 class="mb-4">Tests</h2>
-			<a href="buzzfeed.html" class="btn btn-lg btn-yonunca">Casas Harry Potter</a>
-		</div> -->
-	</div>
-</div>	
+	</section>
+
+	<!-- Projects Section -->
+	<section class="section">
+		<div class="container">
+			<h2 class="section-title fade-in">💼 Proyectos</h2>
+			<div class="row g-4">
+				<div class="col-12 col-md-4">
+					<div class="modern-card p-4 h-100 fade-in stagger-1">
+						<div class="text-center">
+							<div class="mb-3">
+								<i class="fas fa-gamepad" style="font-size: 2.5rem; color: #27ae60;"></i>
+							</div>
+							<h4 class="mb-3">Word Fight</h4>
+							<p class="text-muted mb-4">Juego multijugador de palabras competitivo desarrollado colaborativamente.</p>
+							<a href="https://github.com/Guaaay/WordFight" class="modern-btn btn-project w-100" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-github me-2"></i>Ver en GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4">
+					<div class="modern-card p-4 h-100 fade-in stagger-2">
+						<div class="text-center">
+							<div class="mb-3">
+								<i class="fas fa-robot" style="font-size: 2.5rem; color: #f39c12;"></i>
+							</div>
+							<h4 class="mb-3">Mblock Programs</h4>
+							<p class="text-muted mb-4">Colección de programas educativos para robótica y programación visual.</p>
+							<a href="https://github.com/Juandeodin/Mblock-Programs" class="modern-btn btn-project w-100" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-github me-2"></i>Ver en GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4">
+					<div class="modern-card p-4 h-100 fade-in stagger-3">
+						<div class="text-center">
+							<div class="mb-3">
+								<i class="fas fa-rocket" style="font-size: 2.5rem; color: #9b59b6;"></i>
+							</div>
+							<h4 class="mb-3">Transverse</h4>
+							<p class="text-muted mb-4">Juego indie experimental disponible en itch.io con mecánicas innovadoras.</p>
+							<a href="https://juandeodin.itch.io/transverse" class="modern-btn btn-project w-100" target="_blank" rel="noopener noreferrer">
+								<i class="fas fa-external-link-alt me-2"></i>Jugar en itch.io
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Me Section -->
+	<section class="section about-section">
+		<div class="container">
+			<h2 class="section-title fade-in">👨‍💻 Sobre Mí</h2>
+			<div class="row justify-content-center">
+				<div class="col-12 col-lg-10">
+					<div class="modern-card about-card fade-in">
+						<div class="about-avatar">JO</div>
+						<h3 class="text-gradient">Juan de Odin</h3>
+						<p class="lead mb-4">Desarrollador Full-Stack con pasión por crear experiencias digitales únicas y juegos web interactivos.</p>
+						<p class="mb-4">Me especializo en desarrollo web moderno, creación de juegos casuales y aplicaciones interactivas. Disfruto experimentando con nuevas tecnologías y creando proyectos que combinen funcionalidad con diversión.</p>
+						
+						<div class="skills-grid">
+							<div class="skill-item">
+								<div class="skill-icon">🌐</div>
+								<h5>Frontend</h5>
+								<p>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</p>
+							</div>
+							<div class="skill-item">
+								<div class="skill-icon">⚙️</div>
+								<h5>Backend</h5>
+								<p>Node.js, Python, APIs RESTful, Bases de Datos</p>
+							</div>
+							<div class="skill-item">
+								<div class="skill-icon">🎮</div>
+								<h5>Game Dev</h5>
+								<p>Juegos Web, Canvas API, Game Logic, UX Interactiva</p>
+							</div>
+							<div class="skill-item">
+								<div class="skill-icon">🛠️</div>
+								<h5>Herramientas</h5>
+								<p>Git, GitHub, VS Code, DevTools, Debugging</p>
+							</div>
+						</div>
+
+						<div class="contact-links">
+							<a href="https://github.com/juandeodin" class="contact-link" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-github"></i>
+								<span>GitHub</span>
+							</a>
+							<a href="https://linkedin.com/in/juandeodin" class="contact-link" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-linkedin"></i>
+								<span>LinkedIn</span>
+							</a>
+							<a href="mailto:juan@example.com" class="contact-link">
+								<i class="fas fa-envelope"></i>
+								<span>Email</span>
+							</a>
+							<a href="https://juandeodin.itch.io" class="contact-link" target="_blank" rel="noopener noreferrer">
+								<i class="fas fa-gamepad"></i>
+								<span>itch.io</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="py-4" style="background: rgba(44, 62, 80, 0.9); color: white;">
+		<div class="container text-center">
+			<p class="mb-0">© 2024 Juan de Odin. Hecho con ❤️ y mucho ☕</p>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		// Fade-in animation on scroll
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, observerOptions);
+
+		// Observe all fade-in elements
+		document.querySelectorAll('.fade-in').forEach(el => {
+			observer.observe(el);
+		});
+
+		// Add initial visible class to elements in viewport
+		document.addEventListener('DOMContentLoaded', () => {
+			setTimeout(() => {
+				document.querySelectorAll('.hero-section .fade-in').forEach(el => {
+					el.classList.add('visible');
+				});
+			}, 300);
+		});
+	</script>
 </body>
 </html>
