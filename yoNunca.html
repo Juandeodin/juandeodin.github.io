@@ -3,60 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yo Nunca</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/juegoBeber.css">
+    <title>Yo Nunca - Redirecting...</title>
+    <script>
+        // Redirect to unified template
+        window.location.replace('game.html?game=yoNunca');
+    </script>
 </head>
-<body class="bg-secondary bg-opacity-10" style="min-height: 100vh;">
-<div class="container-fluid d-flex flex-column min-vh-100">
-    <div class="card p-4 shadow-lg main-card w-100 d-flex flex-column justify-content-between" style="max-width: 400px; height: 90vh; position: relative;">
-        <h1 class="mb-3 text-center titulo-festivo yonunca" style="margin-top:0;">Yo Nunca</h1>
-        <div id="pantalla-reglas">
-            <div class="mb-4 fs-5 text-center" style="min-height: 120px;">
-                Cada jugador, por turnos, dice una frase empezando por <b>"Yo nunca..."</b>.<br>
-                Quien sí lo haya hecho, debe beber. <b>Reglas adicionales: </b> <br><i>Brindo por tu historia:</i> Si alguien bebe con una pregunta, otra persona puede
-                beber el doble que esa persona diciendo "Brindo por tu historia" y obligar a la otra persona a contar su historia.
-            </div>           
-        </div>
-        <div id="pantalla-categorias" class="d-none">
-            <form id="formCategorias" class="mb-4 w-100 d-flex flex-column align-items-center">
-                <label class="form-label mb-2 titulo-categorias" for="yoNunca">categorías</label>
-                <div class="row w-100 g-2">
-                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                        <input class="form-check-input checkbox-festivo clasico" type="checkbox" id="sexual" name="categoria" value="sexual">
-                        <label class="form-check-label label-festivo clasico ms-2" for="sexual">Sexual</label>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                        <input class="form-check-input checkbox-festivo picante" type="checkbox" id="amor" name="categoria" value="amor">
-                        <label class="form-check-label label-festivo picante ms-2" for="amor">Amor</label>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                        <input class="form-check-input checkbox-festivo humor" type="checkbox" id="humor" name="categoria" value="humor">
-                        <label class="form-check-label label-festivo humor ms-2" for="humor">Humor</label>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
-            <div id="pregunta" class="d-none mb-5 text-center pregunta-grande"></div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button id="empezar" class="btn btn-empezar btn-lg w-100 mb-3 btn-festivo d-none" onclick="cargarPreguntas('yoNunca')">Empezar</button>
-            <button id="siguiente" class="btn d-none mb-2 btn-siguiente yonunca btn-festivo" onclick="siguientePregunta()">
-                <span>Siguiente</span>
-            </button>
-            <button id="btnContinuar" class="btn btn-empezar btn-lg w-100 mb-3 btn-festivo" onclick = "cambiarPantalla()">Continuar</button>
-        </div>
-        <a href="index.html" class="btn btn-secondary btn-sm position-absolute top-0 end-0 m-1">Inicio</a>
-    </div>
-     
-</div>
+<body>
+    <p>Redirecting to Yo Nunca game...</p>
+    <p>If you are not redirected automatically, <a href="game.html?game=yoNunca">click here</a>.</p>
 </body>
 </html>
-
-<script src="javascript/JuegoBeber.js"></script>
-<script>
-
-</script>

@@ -42,11 +42,16 @@ git push origin main
 
 ### Testing Games
 ```bash
-# Open any game directly
-open yoNunca.html
-open redFlags.html
-open memoryMatrix.html
-open verdadReto.html
+# Test unified template games
+open "http://localhost:8000/game.html?game=yoNunca"
+open "http://localhost:8000/game.html?game=redFlags"
+open "http://localhost:8000/game.html?game=verdadReto"
+
+# Test independent games
+open "http://localhost:8000/memoryMatrix.html"
+
+# Test main page responsiveness
+open "http://localhost:8000/index.html"
 ```
 
 ## Architecture
@@ -54,18 +59,20 @@ open verdadReto.html
 ### File Structure
 ```
 ├── index.html              # Main portfolio page
-├── [game-name].html        # Individual game pages
+├── game.html              # Unified template for all drinking games
+├── [legacy-game].html     # Legacy individual game pages (deprecated)
 ├── questions/              # Game data
 │   ├── *.csv              # Question/content files for drinking games
 │   ├── facts.json         # Educational facts for Memory Matrix
 │   └── test.json          # Quiz data (Harry Potter houses)
 ├── javascript/
 │   ├── JuegoBeber.js      # Shared logic for drinking games
+│   ├── gameConfig.js      # Game configuration and template system
 │   ├── memoryMatrix.js    # Memory game logic
 │   ├── Preguntas.js       # Question handling utilities
 │   └── Buzzfeed.js        # Quiz game logic
 ├── css/
-│   ├── juegoBeber.css     # Shared styles for drinking games
+│   ├── juegoBeber.css     # Shared styles for all games (responsive)
 │   ├── memoryMatrix.css   # Memory game styles
 │   └── Buzzfeed.css       # Quiz game styles
 └── .vscode/               # VS Code configuration
@@ -73,14 +80,26 @@ open verdadReto.html
 
 ### Game Architecture Pattern
 
-All drinking games (`yoNunca.html`, `redFlags.html`, `verdadReto.html`) follow a consistent pattern:
+**Unified Template System**: All drinking games now use a single template (`game.html`) with URL parameters:
+- `game.html?game=yoNunca` - Yo Nunca game
+- `game.html?game=redFlags` - Red Flags game
+- `game.html?game=verdadReto` - Verdad o Reto game
 
+**Template Components**:
 1. **Screen Flow**: Rules → Category Selection → Game Play
 2. **Data Format**: CSV files in `questions/` directory with `tipo,pregunta` format
-3. **Shared JavaScript**: `JuegoBeber.js` handles common functionality
-4. **Shared Styling**: `juegoBeber.css` provides consistent theming
+3. **Configuration**: `gameConfig.js` contains all game-specific parameters
+4. **Shared Logic**: `JuegoBeber.js` handles common functionality
+5. **Responsive Styling**: `juegoBeber.css` provides consistent theming and mobile optimization
 
 ### Game Components
+
+**Unified Template System (`gameConfig.js`)**:
+- `gameConfigs`: Object containing all game configurations
+- `initializeGame(gameType)`: Sets up game based on URL parameter
+- `createCategories()`: Dynamically generates category checkboxes
+- `applyTheme()`: Applies game-specific styling
+- `startGame()`: Wrapper for `cargarPreguntas()` with current config
 
 **Drinking Games (`JuegoBeber.js`)**:
 - `cargarPreguntas(juego)`: Loads questions from CSV, filters by category
@@ -113,11 +132,25 @@ All drinking games (`yoNunca.html`, `redFlags.html`, `verdadReto.html`) follow a
 
 ## Adding New Games
 
-### Drinking Game Pattern
+### Drinking Game Pattern (Unified Template)
 1. Create CSV file in `questions/[game-name].csv`
-2. Create HTML file following existing template
-3. Add game link to `index.html`
-4. Add color scheme to `css/juegoBeber.css`
+2. Add configuration to `gameConfigs` object in `javascript/gameConfig.js`
+3. Add game link to `index.html` using format: `game.html?game=[game-name]`
+4. Add color scheme CSS classes to `css/juegoBeber.css`
+
+**Example Game Configuration**:
+```javascript
+newGame: {
+    title: "Game Title",
+    displayName: "Display Name", 
+    themeClass: "theme-class",
+    csvFile: "csvFileName",
+    rules: `Game rules HTML content`,
+    categories: [
+        { id: "cat1", value: "cat1", label: "Category 1", class: "clasico", colClass: "col-12 col-md-4" }
+    ]
+}
+```
 
 ### Memory/Puzzle Game Pattern
 1. Create dedicated HTML file
@@ -148,7 +181,10 @@ All drinking games (`yoNunca.html`, `redFlags.html`, `verdadReto.html`) follow a
 ### Bootstrap Integration
 - Uses Bootstrap 5.3.0 CDN
 - Custom classes override Bootstrap defaults
-- Responsive design for mobile/desktop
+- Fully responsive design with mobile-first approach
+- Grid system used for button layouts on main page
+- Responsive game cards with proper centering
+- Mobile-optimized typography and spacing
 
 ### Font Integration
 - Google Fonts CDN for custom typography

@@ -3,60 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Flag</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/juegoBeber.css">
+    <title>Red Flag - Redirecting...</title>
+    <script>
+        // Redirect to unified template
+        window.location.replace('game.html?game=redFlags');
+    </script>
 </head>
-<body class="bg-secondary bg-opacity-10" style="min-height: 100vh;">
-<div class="container-fluid d-flex flex-column min-vh-100">
-    <div class="card p-4 shadow-lg main-card w-100 d-flex flex-column justify-content-between" style="max-width: 400px; height: 90vh; position: relative;">
-        <h1 class="mb-3 text-center titulo-festivo redflags" style="margin-top:0;">Red Flag</h1>
-        <div id="pantalla-reglas">
-            <div class="mb-4 fs-5 text-center" style="min-height: 120px;">
-                Cada jugador, por turnos, dice una frase empezando por <b>"Red Flag..."</b>.<br>
-                <i>Se puede jugar de distintas maneras:</i> Pueden beber las personas que <b>tengan</b> dicha red flag o pueden beber las personas
-                que <b>hayan salido o salgan</b> con personas con esa red flag.<br>
-            </div>           
-        </div>
-        <div id="pantalla-categorias" class="d-none">
-            <form id="formCategorias" class="mb-4 w-100 d-flex flex-column align-items-center">
-                <label class="form-label mb-2 titulo-categorias" for="yoNunca">categorías</label>
-                <div class="row w-100 g-2">
-                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                        <input class="form-check-input checkbox-festivo clasico" type="checkbox" id="hombre" name="categoria" value="hombre">
-                        <label class="form-check-label label-festivo clasico ms-2" for="hombre">Hombres</label>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                        <input class="form-check-input checkbox-festivo picante" type="checkbox" id="mujer" name="categoria" value="mujer">
-                        <label class="form-check-label label-festivo picante ms-2" for="mujer">Mujeres</label>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                        <input class="form-check-input checkbox-festivo humor" type="checkbox" id="ambos" name="categoria" value="ambos">
-                        <label class="form-check-label label-festivo humor ms-2" for="ambos">Ambos</label>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
-            <div id="pregunta" class="d-none mb-5 text-center pregunta-grande"></div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button id="empezar" class="btn btn-siguiente redflags btn-lg w-100 mb-3 btn-festivo d-none" onclick="cargarPreguntas('redFlags')">Empezar</button>
-            <button id="siguiente" class="btn d-none mb-2 btn-siguiente redflags btn-festivo" onclick="siguientePregunta()">
-                <span>Siguiente</span>
-            </button>
-            <button id="btnContinuar" class="btn btn-siguiente redflags btn-lg w-100 mb-3 btn-festivo" onclick = "cambiarPantalla()">Continuar</button>
-        </div>
-        <a href="index.html" class="btn btn-secondary btn-sm position-absolute top-0 end-0 m-1">Inicio</a>
-    </div>
-     
-</div>
+<body>
+    <p>Redirecting to Red Flag game...</p>
+    <p>If you are not redirected automatically, <a href="game.html?game=redFlags">click here</a>.</p>
 </body>
 </html>
-
-<script src="javascript/JuegoBeber.js"></script>
-<script>
-
-</script>
