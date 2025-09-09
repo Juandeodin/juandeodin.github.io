@@ -18,6 +18,10 @@
     color: #e74c3c;
     text-shadow: 2px 2px 8px #fff, 0 0 10px #e74c3c;
 }
+.titulo-festivo.verdadreto {
+    color: #3498db;
+    text-shadow: 2px 2px 8px #fff, 0 0 10px #3498db;
+}
 .label-festivo {
     font-family: 'Luckiest Guy', cursive;
     font-size: 1.3em;
@@ -80,6 +84,11 @@
     color: #000 !important;
     border: none !important;
 }
+.btn-siguiente.verdadreto{
+    background-color:#3498db !important;
+    color: #fff !important;
+    border: none !important;
+}
 
 .btn-empezar, .btn-empezar:hover {
     font-size: 2em !important;
@@ -103,6 +112,12 @@
 
 .btn-redflags, .btn-redflags:hover {
     background-color: #e74c3c;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary, .btn-primary:hover {
+    background-color: #3498db;
     color: #fff;
     border: none;
 }
