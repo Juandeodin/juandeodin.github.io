@@ -330,25 +330,122 @@
     
     .pregunta-grande {
         font-size: 1.5em !important;
+        padding: 1.5rem;
+        margin: 0.5rem 0;
+    }
+    
+    .label-festivo {
+        font-size: 1.1em;
+        padding: 6px 10px;
+    }
+    
+    .checkbox-festivo.clasico,
+    .checkbox-festivo.picante,
+    .checkbox-festivo.humor {
+        transform: scale(1.2);
+    }
+    
+    .titulo-categorias {
+        font-size: 1.8em;
+        margin-bottom: 1rem;
     }
 }
 
 /* Ensure proper spacing on mobile */
 @media (max-width: 576px) {
     .main-card {
-        margin: 1rem;
-        width: calc(100% - 2rem) !important;
+        margin: 0.5rem;
+        width: calc(100% - 1rem) !important;
         max-width: none !important;
+        padding: 1rem !important;
     }
     
     .titulo-festivo {
-        font-size: 2em;
+        font-size: 1.8em;
+        margin-bottom: 0.5rem;
     }
     
     .btn-lg {
         font-size: 0.9rem;
         padding: 0.5rem 0.75rem;
     }
+    
+    .pregunta-grande {
+        font-size: 1.2em !important;
+        padding: 1rem;
+        line-height: 1.3;
+    }
+    
+    .label-festivo {
+        font-size: 1em;
+        padding: 4px 8px;
+        margin-left: 8px;
+    }
+    
+    .checkbox-festivo.clasico,
+    .checkbox-festivo.picante,
+    .checkbox-festivo.humor {
+        transform: scale(1.1);
+    }
+    
+    .titulo-categorias {
+        font-size: 1.5em;
+        margin-bottom: 0.8rem;
+    }
+    
+    .modern-bg::before {
+        opacity: 0.3;
+    }
+}
+
+/* Loading animation for game transitions */
+.loading-pulse {
+    animation: loadingPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes loadingPulse {
+    0% { opacity: 0.6; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Focus improvements for accessibility */
+.checkbox-festivo:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+}
+
+.btn-festivo:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+}
+
+/* Enhanced button animations */
+.btn-festivo {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-festivo:active {
+    animation: buttonPress 0.1s ease;
+}
+
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.96); }
+    100% { transform: scale(1); }
+}
+
+/* Enhanced checkbox selection feedback */
+.checkbox-festivo:checked {
+    animation: checkboxSelect 0.3s ease;
+}
+
+@keyframes checkboxSelect {
+    0% { transform: scale(1.3); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1.3); }
 }
 
 .btn-yonunca, .btn-yonunca:hover {
