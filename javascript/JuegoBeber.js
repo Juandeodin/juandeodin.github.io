@@ -32,6 +32,8 @@ async function cargarPreguntas(juego) {
   document.getElementById("siguiente").classList.remove("d-none");
   document.getElementById("empezar").classList.add("d-none");
   document.getElementById("formCategorias").classList.add("d-none");
+  document.getElementById("pantalla-categorias").classList.add("d-none");
+  document.getElementById("btn-volver-index").classList.add("d-none");
 }
 
 function cambiarPantalla(){

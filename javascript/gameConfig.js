@@ -79,15 +79,29 @@ function createCategories(categories) {
     
     categories.forEach(category => {
         const categoryDiv = document.createElement('div');
-        categoryDiv.className = `${category.colClass} d-flex align-items-center justify-content-center`;
+        categoryDiv.className = `category-item ${category.class}`;
+        categoryDiv.onclick = () => toggleCategory(category.id);
         
         categoryDiv.innerHTML = `
-            <input class="form-check-input checkbox-festivo ${category.class}" type="checkbox" id="${category.id}" name="categoria" value="${category.value}">
-            <label class="form-check-label label-festivo ${category.class} ms-2" for="${category.id}">${category.label}</label>
+            <input type="checkbox" id="${category.id}" name="categoria" value="${category.value}">
+            <div class="category-label">${category.label}</div>
         `;
         
         container.appendChild(categoryDiv);
     });
+}
+
+function toggleCategory(categoryId) {
+    const checkbox = document.getElementById(categoryId);
+    const categoryItem = checkbox.parentElement;
+    
+    checkbox.checked = !checkbox.checked;
+    
+    // Add a subtle scale effect when toggled
+    categoryItem.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+        categoryItem.style.transform = '';
+    }, 150);
 }
 
 function applyTheme(themeClass) {
@@ -113,5 +127,24 @@ function startGame() {
     const config = gameConfigs[currentGameType];
     if (config) {
         cargarPreguntas(config.csvFile);
+    }
+}
+
+function restartGame() {
+    // Reset game state
+    if (currentGameType && gameConfigs[currentGameType]) {
+        // Show initial screens
+        document.getElementById('pantalla-reglas').classList.remove('d-none');
+        document.getElementById('btnContinuar').classList.remove('d-none');
+        document.getElementById('btn-volver-index').classList.remove('d-none');
+        
+        // Hide game screens
+        document.getElementById('pantalla-categorias').classList.add('d-none');
+        document.getElementById('pregunta').classList.add('d-none');
+        document.getElementById('empezar').classList.add('d-none');
+        document.getElementById('siguiente').classList.add('d-none');
+        
+        // Reload the page to fully reset the game
+        window.location.reload();
     }
 }

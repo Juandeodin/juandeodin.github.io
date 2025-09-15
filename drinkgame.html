@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>   
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,17 +13,21 @@
     <div class="card p-4 shadow-lg main-card d-flex flex-column justify-content-between" style="width: 100%; max-width: 500px; height: 90vh; position: relative;">
         <h1 id="game-header" class="mb-3 text-center titulo-festivo" style="margin-top:0;">Juego</h1>
         <div id="pantalla-reglas">
-            <div id="game-rules" class="mb-4 fs-5 text-center" style="min-height: 120px;">
+            <div id="game-rules" class="rules-section text-center">
                 <!-- Rules will be loaded dynamically -->
+            </div>
+            <div class="text-center">
+                <a href="index.html" id="btn-volver-index" class="btn btn-volver-menu">Ir a la página principal</a>
             </div>           
         </div>
         <div id="pantalla-categorias" class="d-none">
-            <form id="formCategorias" class="mb-4 w-100 d-flex flex-column align-items-center">
-                <label class="form-label mb-2 titulo-categorias">categorías</label>
-                <div id="categories-container" class="row w-100 g-2">
-                    <!-- Categories will be loaded dynamically -->
-                </div>
-            </form>
+                <h3 class="categories-title">Categorías</h3>
+                <form id="formCategorias">
+                    <div id="categories-container">
+                        <!-- Categories will be loaded dynamically -->
+                    </div>
+                </form>
+            
         </div>
         <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
             <div id="pregunta" class="d-none mb-5 text-center pregunta-grande"></div>
@@ -36,7 +39,7 @@
             </button>
             <button id="btnContinuar" class="btn btn-lg w-100 mb-3 btn-festivo" onclick="cambiarPantalla()">Continuar</button>
         </div>
-        <a href="index.html" class="btn btn-secondary btn-sm position-absolute top-0 end-0 m-1">Inicio</a>
+        <button onclick="restartGame()" class="btn btn-inicio position-absolute top-0 end-0 m-2">Inicio</button>
     </div>
 </div>
 
