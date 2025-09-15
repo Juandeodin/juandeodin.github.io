@@ -1,59 +1,197 @@
+/* Modern background */
+.modern-bg {
+    background: linear-gradient(135deg, 
+        #667eea 0%, 
+        #764ba2 25%, 
+        #f093fb 50%, 
+        #f5576c 75%, 
+        #4facfe 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+}
+
+.modern-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .titulo-categorias {
-    color: #000;
+    color: #2c3e50;
     font-size: 2em;
     font-family: 'Luckiest Guy', cursive;
-    text-shadow: 1px 1px 6px #fff, 0 0 6px #8e44ad;
+    text-shadow: 2px 2px 8px rgba(255,255,255,0.8), 0 0 10px rgba(142,68,173,0.3);
     letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .titulo-festivo {
     font-size: 3em;
     font-family: 'Luckiest Guy', cursive;
     letter-spacing: 2px;
+    margin-bottom: 1rem;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { 
+        transform: scale(1);
+    }
+    100% { 
+        transform: scale(1.02);
+    }
 }
 .titulo-festivo.yonunca {
     color: #8e44ad;
-    text-shadow: 2px 2px 8px #fff, 0 0 10px #8e44ad;
+    text-shadow: 3px 3px 12px rgba(255,255,255,0.9), 0 0 20px rgba(142,68,173,0.6);
+    background: linear-gradient(135deg, #8e44ad 0%, #c39bd3 50%, #8e44ad 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 8px rgba(142,68,173,0.3));
 }
 .titulo-festivo.redflags {
     color: #e74c3c;
-    text-shadow: 2px 2px 8px #fff, 0 0 10px #e74c3c;
+    text-shadow: 3px 3px 12px rgba(255,255,255,0.9), 0 0 20px rgba(231,76,60,0.6);
+    background: linear-gradient(135deg, #e74c3c 0%, #f1948a 50%, #e74c3c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 8px rgba(231,76,60,0.3));
 }
 .titulo-festivo.verdadreto {
     color: #3498db;
-    text-shadow: 2px 2px 8px #fff, 0 0 10px #3498db;
+    text-shadow: 3px 3px 12px rgba(255,255,255,0.9), 0 0 20px rgba(52,152,219,0.6);
+    background: linear-gradient(135deg, #3498db 0%, #85c1e9 50%, #3498db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 8px rgba(52,152,219,0.3));
 }
 .label-festivo {
     font-family: 'Luckiest Guy', cursive;
     font-size: 1.3em;
-    margin-left: 8px;
+    margin-left: 12px;
     display: inline-block;
     text-align: left;
     vertical-align: middle;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+}
+
+.label-festivo:hover {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.2);
 }
 .btn-festivo, .btn-festivo:hover {
     font-family: 'Luckiest Guy', cursive;
     font-size: 1.5em;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 6px #fff, 0 0 6px #8e44ad;
-    border-radius: 12px;
+    text-shadow: 1px 1px 6px rgba(255,255,255,0.8), 0 0 6px rgba(142,68,173,0.4);
+    border-radius: 20px;
+    border: none;
+    padding: 12px 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-festivo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-festivo:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.btn-festivo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-festivo:hover::before {
+    left: 100%;
 }
 .checkbox-festivo.clasico {
     accent-color: #8e44ad;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.checkbox-festivo.clasico:checked + .label-festivo.clasico {
+    background: linear-gradient(135deg, rgba(142,68,173,0.2), rgba(142,68,173,0.1));
+    border-color: #8e44ad;
+    color: #8e44ad;
+    box-shadow: 0 4px 12px rgba(142,68,173,0.3);
 }
 .label-festivo.clasico {
     color: #8e44ad;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 .checkbox-festivo.picante {
     accent-color: #e74c3c;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.checkbox-festivo.picante:checked + .label-festivo.picante {
+    background: linear-gradient(135deg, rgba(231,76,60,0.2), rgba(231,76,60,0.1));
+    border-color: #e74c3c;
+    color: #e74c3c;
+    box-shadow: 0 4px 12px rgba(231,76,60,0.3);
 }
 .label-festivo.picante {
     color: #e74c3c;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 .checkbox-festivo.humor {
-    accent-color: green;
+    accent-color: #27ae60;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.checkbox-festivo.humor:checked + .label-festivo.humor {
+    background: linear-gradient(135deg, rgba(39,174,96,0.2), rgba(39,174,96,0.1));
+    border-color: #27ae60;
+    color: #27ae60;
+    box-shadow: 0 4px 12px rgba(39,174,96,0.3);
 }
 .label-festivo.humor {
-   accent-color: green;
+    color: #27ae60;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 .pregunta-grande {
     font-size: 2em !important;
@@ -61,6 +199,46 @@
     font-weight: 700 !important;
     text-align: center !important;
     display: block;
+    line-height: 1.4;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,249,250,0.8));
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    margin: 1rem 0;
+    animation: questionSlide 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes questionSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pregunta-grande::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8e44ad, #e74c3c, #3498db, #27ae60);
+    background-size: 300% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 .btn-siguiente, .btn-siguiente:hover, .btn-siguiente:active, .btn-siguiente:focus, .btn-siguiente:focus-visible , .btn-siguiente:focus-within {
     font-size: 2em !important;
@@ -107,6 +285,36 @@
 /* Main card centering improvements */
 .main-card {
     margin: 0 auto;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(142,68,173,0.1) 0%, 
+        rgba(231,76,60,0.1) 25%, 
+        rgba(52,152,219,0.1) 50%, 
+        rgba(39,174,96,0.1) 75%, 
+        rgba(142,68,173,0.1) 100%);
+    opacity: 0.5;
+    z-index: -1;
+    animation: cardGlow 8s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
 }
 
 /* Responsive button sizing */
@@ -122,25 +330,122 @@
     
     .pregunta-grande {
         font-size: 1.5em !important;
+        padding: 1.5rem;
+        margin: 0.5rem 0;
+    }
+    
+    .label-festivo {
+        font-size: 1.1em;
+        padding: 6px 10px;
+    }
+    
+    .checkbox-festivo.clasico,
+    .checkbox-festivo.picante,
+    .checkbox-festivo.humor {
+        transform: scale(1.2);
+    }
+    
+    .titulo-categorias {
+        font-size: 1.8em;
+        margin-bottom: 1rem;
     }
 }
 
 /* Ensure proper spacing on mobile */
 @media (max-width: 576px) {
     .main-card {
-        margin: 1rem;
-        width: calc(100% - 2rem) !important;
+        margin: 0.5rem;
+        width: calc(100% - 1rem) !important;
         max-width: none !important;
+        padding: 1rem !important;
     }
     
     .titulo-festivo {
-        font-size: 2em;
+        font-size: 1.8em;
+        margin-bottom: 0.5rem;
     }
     
     .btn-lg {
         font-size: 0.9rem;
         padding: 0.5rem 0.75rem;
     }
+    
+    .pregunta-grande {
+        font-size: 1.2em !important;
+        padding: 1rem;
+        line-height: 1.3;
+    }
+    
+    .label-festivo {
+        font-size: 1em;
+        padding: 4px 8px;
+        margin-left: 8px;
+    }
+    
+    .checkbox-festivo.clasico,
+    .checkbox-festivo.picante,
+    .checkbox-festivo.humor {
+        transform: scale(1.1);
+    }
+    
+    .titulo-categorias {
+        font-size: 1.5em;
+        margin-bottom: 0.8rem;
+    }
+    
+    .modern-bg::before {
+        opacity: 0.3;
+    }
+}
+
+/* Loading animation for game transitions */
+.loading-pulse {
+    animation: loadingPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes loadingPulse {
+    0% { opacity: 0.6; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Focus improvements for accessibility */
+.checkbox-festivo:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+}
+
+.btn-festivo:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+}
+
+/* Enhanced button animations */
+.btn-festivo {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-festivo:active {
+    animation: buttonPress 0.1s ease;
+}
+
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.96); }
+    100% { transform: scale(1); }
+}
+
+/* Enhanced checkbox selection feedback */
+.checkbox-festivo:checked {
+    animation: checkboxSelect 0.3s ease;
+}
+
+@keyframes checkboxSelect {
+    0% { transform: scale(1.3); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1.3); }
 }
 
 .btn-yonunca, .btn-yonunca:hover {
