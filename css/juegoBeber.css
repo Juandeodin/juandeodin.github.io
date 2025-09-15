@@ -104,42 +104,271 @@
 #oculto { display: none; }
 #siguiente { padding: 10px 20px; font-size: 1em; }
 
-/* Main card centering improvements */
+/* Enhanced Main Card Styling */
 .main-card {
     margin: 0 auto;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
 }
 
-/* Responsive button sizing */
+/* Enhanced Rules Container */
+.rules-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Enhanced Categories Section */
+.categories-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.categories-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Unified Checkbox Design */
+.category-item {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-item:hover {
+    border-color: #dee2e6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.category-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.category-item.clasico {
+    border-left: 4px solid #8e44ad;
+}
+
+.category-item.clasico input:checked {
+    ~ .category-label {
+        background: transparent;
+        color: white;
+    }
+}
+
+.category-item.clasico:has(input:checked) {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    border-color: #8e44ad;
+}
+
+.category-item.picante {
+    border-left: 4px solid #e74c3c;
+}
+
+.category-item.picante input:checked {
+    ~ .category-label {
+        background: transparent;
+        color: white;
+    }
+}
+
+.category-item.picante:has(input:checked) {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-color: #e74c3c;
+}
+
+.category-item.humor {
+    border-left: 4px solid #27ae60;
+}
+
+.category-item.humor input:checked {
+    ~ .category-label {
+        background: transparent;
+        color: white;
+    }
+}
+
+.category-item.humor:has(input:checked) {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border-color: #27ae60;
+}
+
+.category-label {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.category-item input:checked ~ .category-label {
+    transform: scale(1.02);
+}
+
+/* Enhanced Question Display */
+.pregunta-grande {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    padding: 2rem !important;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    font-size: 2rem !important;
+    line-height: 1.6 !important;
+    color: #2c3e50;
+    font-weight: 500;
+    margin: 2rem auto;
+    max-width: 90%;
+}
+
+/* Enhanced Button Styling */
+.btn-festivo {
+    border-radius: 16px !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+.btn-festivo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-festivo:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Special Continuar Button with Touch Response */
+#btnContinuar {
+    position: relative;
+    overflow: hidden;
+}
+
+#btnContinuar:active {
+    transform: scale(0.98);
+}
+
+#btnContinuar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+#btnContinuar:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Enhanced Button Colors */
+.btn-siguiente.yonunca,
+.btn-empezar.yonunca {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6) !important;
+    color: white !important;
+}
+
+.btn-siguiente.redflags,
+.btn-empezar.redflags {
+    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+    color: white !important;
+}
+
+.btn-siguiente.verdadreto,
+.btn-empezar.verdadreto {
+    background: linear-gradient(135deg, #3498db, #2980b9) !important;
+    color: white !important;
+}
+
+/* Enhanced Title Styling */
+.titulo-festivo {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .btn-lg {
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
+    .main-card {
+        margin: 0.5rem;
+        width: calc(100% - 1rem) !important;
+        height: 95vh !important;
+        border-radius: 20px;
     }
     
     .titulo-festivo {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
     
     .pregunta-grande {
-        font-size: 1.5em !important;
+        font-size: 1.1rem !important;
+        padding: 1.5rem !important;
+    }
+    
+    .categories-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .category-item {
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
     }
 }
 
-/* Ensure proper spacing on mobile */
 @media (max-width: 576px) {
-    .main-card {
-        margin: 1rem;
-        width: calc(100% - 2rem) !important;
-        max-width: none !important;
-    }
-    
     .titulo-festivo {
-        font-size: 2em;
+        font-size: 1.8em;
     }
     
     .btn-lg {
         font-size: 0.9rem;
-        padding: 0.5rem 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .pregunta-grande {
+        font-size: 1rem !important;
+        padding: 1.25rem !important;
+    }
+    
+    .categories-title {
+        font-size: 1.25rem;
     }
 }
 
@@ -159,4 +388,73 @@
     background-color: #3498db;
     color: #fff;
     border: none;
+}
+
+/* Enhanced Inicio Button */
+.btn-inicio {
+    background: linear-gradient(135deg, #6c757d, #5a6268) !important;
+    color: white !important;
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.8rem !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    font-family: 'Luckiest Guy', cursive !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+}
+
+.btn-inicio:hover {
+    background: linear-gradient(135deg, #5a6268, #495057) !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+    text-decoration: none !important;
+}
+
+.btn-inicio:active {
+    transform: translateY(0px) !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* Enhanced Volver al Menu Button */
+.btn-volver-menu {
+    background: linear-gradient(135deg, #17a2b8, #138496) !important;
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: 100 !important;
+    padding: 0.75rem 2rem !important;
+    border: none !important;
+    border-radius: 16px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    font-family: 'Luckiest Guy', cursive !important;
+    box-shadow: 0 4px 16px rgba(23, 162, 184, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    width: auto !important;
+    min-width: 250px !important;
+}
+
+.btn-volver-menu:hover {
+    background: linear-gradient(135deg, #138496, #117a8b) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(23, 162, 184, 0.4) !important;
+    text-decoration: none !important;
+}
+
+.btn-volver-menu:active {
+    transform: translateY(0px) !important;
+    box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3) !important;
+}
+
+.btn-volver-menu:focus {
+    color: white !important;
+    text-decoration: none !important;
 }
