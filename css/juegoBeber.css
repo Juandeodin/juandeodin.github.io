@@ -34,7 +34,6 @@
     font-family: 'Luckiest Guy', cursive;
     font-size: 1.5em;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 6px #fff, 0 0 6px #8e44ad;
     border-radius: 12px;
 }
 .checkbox-festivo.clasico {
@@ -115,12 +114,23 @@
     border-radius: 24px;
 }
 
+/* Game Container Specific Styling */
+#game-container {
+    width: 100% !important;
+    max-width: 500px !important;
+    min-height: 600px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
 /* Enhanced Rules Container */
 .rules-section {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 16px;
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -333,12 +343,19 @@
         border-radius: 20px;
     }
     
+    #game-container {
+        width: calc(100% - 1rem) !important;
+        max-width: none !important;
+        min-height: 500px !important;
+        height: 95vh !important;
+    }
+    
     .titulo-festivo {
         font-size: 2.2em;
     }
     
     .pregunta-grande {
-        font-size: 1.1rem !important;
+        font-size: 2rem !important;
         padding: 1.5rem !important;
     }
     
@@ -353,6 +370,13 @@
 }
 
 @media (max-width: 576px) {
+    #game-container {
+        width: calc(100% - 0.5rem) !important;
+        max-width: none !important;
+        min-height: 450px !important;
+        height: 98vh !important;
+    }
+    
     .titulo-festivo {
         font-size: 1.8em;
     }
@@ -363,12 +387,20 @@
     }
     
     .pregunta-grande {
-        font-size: 1rem !important;
+        font-size: 1.8rem !important;
         padding: 1.25rem !important;
     }
     
     .categories-title {
         font-size: 1.25rem;
+    }
+}
+
+/* Extra small screens (height < 600px) */
+@media (max-height: 600px) {
+    #game-container {
+        min-height: 400px !important;
+        height: 99vh !important;
     }
 }
 
