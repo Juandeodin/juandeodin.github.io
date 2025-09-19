@@ -82,6 +82,7 @@ h4 { font-size: 1.5rem; }
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -204,6 +205,7 @@ h4 { font-size: 1.5rem; }
     background: rgba(255, 255, 255, 0.1);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -215,6 +217,7 @@ h4 { font-size: 1.5rem; }
 /* About Me Section */
 .about-section {
     background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -377,6 +380,124 @@ h4 { font-size: 1.5rem; }
 
 .glassmorphism {
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Tabs Styling */
+.custom-tabs {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: 0.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.custom-tabs .nav-link {
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-tabs .nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.custom-tabs .nav-link.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+}
+
+.custom-tabs .nav-link.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: var(--radius-lg);
+    z-index: 1;
+}
+
+.custom-tabs .nav-link i {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+/* Tab Content Animation */
+.tab-content {
+    margin-top: 2rem;
+}
+
+.tab-pane {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Tabs */
+@media (max-width: 768px) {
+    .custom-tabs {
+        flex-direction: column;
+        align-items: stretch; /* Hacer que todas ocupen el mismo ancho */
+        width: 100%;
+        gap: 0.5rem;
+    }
+    
+    .custom-tabs .nav-link {
+        /* Botones de ancho completo y alineación consistente */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        text-align: left;
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .custom-tabs .nav-link i {
+        display: inline-block; /* Icono en línea con el texto */
+        margin: 0 0.5rem 0 0;
+        font-size: 1.1rem;
+    }
+
+    /* El contenido se separa lo justo y se adapta a la altura de tabs */
+    .tab-content {
+        margin-top: 1rem; /* reducir espacio en móvil */
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-tabs {
+        padding: 0.25rem;
+    }
+    
+    .custom-tabs .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+    }
 }

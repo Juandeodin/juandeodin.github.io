@@ -22,167 +22,48 @@
 		</div>
 	</section>
 
-	<!-- Web Games Section -->
+	<!-- Tabs Section -->
 	<section class="section">
 		<div class="container">
-			<h2 class="section-title fade-in">🎮 Juegos Web</h2>
-			<div class="row g-4">
-				<div class="col-6 col-lg-3">
-					<div class="modern-card p-3 h-100 fade-in stagger-1">
-						<div class="text-center">
-							<div class="mb-3">
-								<i class="fas fa-wine-glass-alt" style="font-size: 2.5rem; color: #8e44ad;"></i>
-							</div>
-							<h5 class="mb-2">Yo Nunca</h5>
-							<p class="text-muted small mb-3">El mejor para romper el hielo</p>
-							<a href="drinkgame.html?game=yoNunca" class="modern-btn btn-game-purple w-100">Jugar</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-lg-3">
-					<div class="modern-card p-3 h-100 fade-in stagger-2">
-						<div class="text-center">
-							<div class="mb-3">
-								<i class="fas fa-flag" style="font-size: 2.5rem; color: #e74c3c;"></i>
-							</div>
-							<h5 class="mb-2">Red Flags</h5>
-							<p class="text-muted small mb-3">Juego de beber inventado por mi</p>
-							<a href="drinkgame.html?game=redFlags" class="modern-btn btn-game-red w-100">Jugar</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-lg-3">
-					<div class="modern-card p-3 h-100 fade-in stagger-3">
-						<div class="text-center">
-							<div class="mb-3">
-								<i class="fas fa-brain" style="font-size: 2.5rem; color: #2c3e50;"></i>
-							</div>
-							<h5 class="mb-2">Memory Matrix</h5>
-							<p class="text-muted small mb-3">Pon a prueba tu memoria</p>
-							<a href="memoryMatrix.html" class="modern-btn btn-game-dark w-100">Jugar</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-lg-3">
-					<div class="modern-card p-3 h-100 fade-in stagger-4">
-						<div class="text-center">
-							<div class="mb-3">
-								<i class="fas fa-question-circle" style="font-size: 2.5rem; color: #3498db;"></i>
-							</div>
-							<h5 class="mb-2">Verdad o Reto</h5>
-							<p class="text-muted small mb-3">El clásico de los clásicos</p>
-							<a href="drinkgame.html?game=verdadReto" class="modern-btn btn-game-blue w-100">Jugar</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			<!-- Tab Navigation -->
+			<ul class="nav nav-tabs custom-tabs justify-content-center mb-4" id="mainTabs" role="tablist">
+				<li class="nav-item" role="presentation">
+					<button class="nav-link active" id="games-tab" data-bs-toggle="tab" data-bs-target="#games" type="button" role="tab" aria-controls="games" aria-selected="true">
+						<i class="fas fa-gamepad me-2"></i>Juegos Web
+					</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button" role="tab" aria-controls="projects" aria-selected="false">
+						<i class="fas fa-code me-2"></i>Proyectos
+					</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">
+						<i class="fas fa-user me-2"></i>Sobre Mí
+					</button>
+				</li>
+			</ul>
 
-	<!-- Projects Section -->
-	<section class="section">
-		<div class="container">
-			<h2 class="section-title fade-in">💼 Proyectos</h2>
-			<div class="row g-4">
-				<div class="col-12 col-md-4">
-					<div class="modern-card p-4 h-100 fade-in stagger-1">
-						<div class="text-center">
-							<div class="mb-3">
-								<i class="fas fa-gamepad" style="font-size: 2.5rem; color: #27ae60;"></i>
-							</div>
-							<h4 class="mb-3">Word Fight</h4>
-							<p class="text-muted mb-4">Juego de Telegram de peleas. Usa las palabras para herir a tus enemigos</p>
-							<a href="https://github.com/Guaaay/WordFight" class="modern-btn btn-project w-100" target="_blank" rel="noopener noreferrer">
-								<i class="fab fa-github me-2"></i>Ver en GitHub
-							</a>
-						</div>
+			<!-- Tab Content -->
+			<div class="tab-content" id="mainTabsContent">
+				<!-- Games Tab -->
+				<div class="tab-pane fade show active" id="games" role="tabpanel" aria-labelledby="games-tab">
+					<div id="games-content">
+						<!-- Content will be loaded dynamically -->
 					</div>
 				</div>
-				<div class="col-12 col-md-4">
-					<div class="modern-card p-4 h-100 fade-in stagger-2">
-						<div class="text-center">
-							<div class="mb-3">
-								<i class="fas fa-robot" style="font-size: 2.5rem; color: #f39c12;"></i>
-							</div>
-							<h4 class="mb-3">Mblock Programs</h4>
-							<p class="text-muted mb-4">Colección de programas educativos para robótica y programación visual orientado al aprendizaje de niños de entre 3 y 5 años</p>
-							<a href="https://github.com/Juandeodin/Mblock-Programs" class="modern-btn btn-project w-100" target="_blank" rel="noopener noreferrer">
-								<i class="fab fa-github me-2"></i>Ver en GitHub
-							</a>
-						</div>
+
+				<!-- Projects Tab -->
+				<div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="projects-tab">
+					<div id="projects-content">
+						<!-- Content will be loaded dynamically -->
 					</div>
 				</div>
-				<div class="col-12 col-md-4">
-					<div class="modern-card p-4 h-100 fade-in stagger-3">
-						<div class="text-center">
-							<div class="mb-3">
-								<i class="fas fa-rocket" style="font-size: 2.5rem; color: #9b59b6;"></i>
-							</div>
-							<h4 class="mb-3">Transverse</h4>
-							<p class="text-muted mb-4">Este videojuego aborda el tema de la transfobia a través de distintas situaciones que ocurren en una discoteca. Fue mi proyecto fin de grado (Matricula de Honor).</p>
-							<a href="https://juandeodin.itch.io/transverse" class="modern-btn btn-project w-100" target="_blank" rel="noopener noreferrer">
-								<i class="fas fa-external-link-alt me-2"></i>Jugar en itch.io
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<!-- About Me Section -->
-	<section class="section about-section">
-		<div class="container">
-			<h2 class="section-title fade-in">👨‍💻 Sobre Mí</h2>
-			<div class="row justify-content-center">
-				<div class="col-12 col-lg-10">
-					<div class="modern-card about-card fade-in">
-						<div class="about-avatar">JC</div>
-						<h3 class="text-gradient">Juan Castro Rodríguez</h3>
-						<p class="lead mb-4">Desarrollador Full-Stack con pasión por crear experiencias digitales únicas</p>
-						<p class="mb-4">Me especializo en desarrollo web moderno, creación de videojuegos y aplicaciones interactivas. Disfruto experimentando con nuevas tecnologías y creando proyectos que supongan un nuevo reto para mí.</p>
-
-						<div class="skills-grid">
-							<div class="skill-item">
-								<div class="skill-icon">🌐</div>
-								<h5>Frontend</h5>
-								<p>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</p>
-							</div>
-							<div class="skill-item">
-								<div class="skill-icon">⚙️</div>
-								<h5>Backend</h5>
-								<p>C#, .NET, C++, Java, Python, MySQL, DB2</p>
-							</div>
-							<div class="skill-item">
-								<div class="skill-icon">🎮</div>
-								<h5>Game Dev</h5>
-								<p>Juegos Web, Unity, Unreal Engine, Houdini</p>
-							</div>
-							<div class="skill-item">
-								<div class="skill-icon">🛠️</div>
-								<h5>Herramientas</h5>
-								<p>Git, GitHub, Jira, VS Code, Swagger, Docker</p>
-							</div>
-						</div>
-
-						<div class="contact-links">
-							<a href="https://github.com/juandeodin" class="contact-link" target="_blank" rel="noopener noreferrer">
-								<i class="fab fa-github"></i>
-								<span>GitHub</span>
-							</a>
-							<a href="https://www.linkedin.com/in/juan-castro-rodr%C3%ADguez/" class="contact-link" target="_blank" rel="noopener noreferrer">
-								<i class="fab fa-linkedin"></i>
-								<span>LinkedIn</span>
-							</a>
-							<a href="mailto:juancas9999@gmail.com" class="contact-link">
-								<i class="fas fa-envelope"></i>
-								<span>Email</span>
-							</a>
-							<a href="https://juandeodin.itch.io" class="contact-link" target="_blank" rel="noopener noreferrer">
-								<i class="fas fa-gamepad"></i>
-								<span>itch.io</span>
-							</a>
-						</div>
+				<!-- About Tab -->
+				<div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+					<div id="about-content">
+						<!-- Content will be loaded dynamically -->
 					</div>
 				</div>
 			</div>
@@ -218,6 +99,23 @@
 			observer.observe(el);
 		});
 
+		// Tab content loading function
+		async function loadTabContent(tabId, contentId) {
+			try {
+				const response = await fetch(`Tabs/${tabId}.html`);
+				const content = await response.text();
+				document.getElementById(contentId).innerHTML = content;
+				
+				// Re-observe fade-in elements in the loaded content
+				document.getElementById(contentId).querySelectorAll('.fade-in').forEach(el => {
+					observer.observe(el);
+					el.classList.add('visible');
+				});
+			} catch (error) {
+				console.error(`Error loading ${tabId} content:`, error);
+			}
+		}
+
 		// Add initial visible class to elements in viewport
 		document.addEventListener('DOMContentLoaded', () => {
 			setTimeout(() => {
@@ -225,6 +123,29 @@
 					el.classList.add('visible');
 				});
 			}, 300);
+
+			// Load initial tab content (games)
+			loadTabContent('games', 'games-content');
+
+			// Tab functionality enhancement
+			const tabLinks = document.querySelectorAll('#mainTabs button[data-bs-toggle="tab"]');
+			tabLinks.forEach(link => {
+				link.addEventListener('shown.bs.tab', function (e) {
+					const targetId = e.target.getAttribute('data-bs-target').replace('#', '');
+					const contentId = `${targetId}-content`;
+					
+					// Load content if not already loaded
+					if (!document.getElementById(contentId).hasChildNodes() || 
+						document.getElementById(contentId).children.length === 0) {
+						loadTabContent(targetId, contentId);
+					} else {
+						// Re-observe fade-in elements in the existing content
+						document.getElementById(contentId).querySelectorAll('.fade-in').forEach(el => {
+							el.classList.add('visible');
+						});
+					}
+				});
+			});
 		});
 	</script>
 </body>
