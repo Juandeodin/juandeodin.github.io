@@ -104,13 +104,21 @@
 			try {
 				const response = await fetch(`Tabs/${tabId}.html`);
 				const content = await response.text();
-				document.getElementById(contentId).innerHTML = content;
+				const container = document.getElementById(contentId);
 				
-				// Re-observe fade-in elements in the loaded content
-				document.getElementById(contentId).querySelectorAll('.fade-in').forEach(el => {
-					observer.observe(el);
-					el.classList.add('visible');
-				});
+				// Cargar contenido suavemente
+				container.innerHTML = content;
+				
+				// Añadir visible class con un pequeño delay para evitar destello
+				setTimeout(() => {
+					container.querySelectorAll('.fade-in').forEach((el, index) => {
+						observer.observe(el);
+						// Stagger la aparición para un efecto más suave
+						setTimeout(() => {
+							el.classList.add('visible');
+						}, index * 50); // 50ms entre cada elemento
+					});
+				}, 50); // Delay inicial de 50ms
 			} catch (error) {
 				console.error(`Error loading ${tabId} content:`, error);
 			}
@@ -139,10 +147,15 @@
 						document.getElementById(contentId).children.length === 0) {
 						loadTabContent(targetId, contentId);
 					} else {
-						// Re-observe fade-in elements in the existing content
-						document.getElementById(contentId).querySelectorAll('.fade-in').forEach(el => {
-							el.classList.add('visible');
-						});
+						// Re-observe fade-in elements en contenido ya existente con stagger suave
+						const container = document.getElementById(contentId);
+						setTimeout(() => {
+							container.querySelectorAll('.fade-in').forEach((el, index) => {
+								setTimeout(() => {
+									el.classList.add('visible');
+								}, index * 30); // Stagger más rápido para contenido existente
+							});
+						}, 30);
 					}
 				});
 			});

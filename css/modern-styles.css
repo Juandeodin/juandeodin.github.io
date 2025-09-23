@@ -341,8 +341,8 @@ h4 { font-size: 1.5rem; }
 /* Animation Classes */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
+    transform: translateY(15px); /* Movimiento más sutil */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Transiciones separadas y más rápidas */
 }
 
 .fade-in.visible {
@@ -441,16 +441,22 @@ h4 { font-size: 1.5rem; }
 /* Tab Content Animation */
 .tab-content {
     margin-top: 2rem;
+    min-height: 70vh; /* Altura mínima para evitar saltos del footer */
+    transition: min-height 0.3s ease;
 }
 
 .tab-pane {
-    animation: fadeInUp 0.5s ease-out;
+    /* Eliminamos la animación automática que causa el destello */
+    min-height: inherit; /* Heredar altura mínima del contenedor */
+    opacity: 1; /* Asegurar que siempre sea visible */
+    transform: none; /* Sin transformaciones por defecto */
 }
 
+/* Animación más sutil solo para elementos fade-in específicos */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px); /* Movimiento más sutil */
     }
     to {
         opacity: 1;
@@ -488,6 +494,7 @@ h4 { font-size: 1.5rem; }
     /* El contenido se separa lo justo y se adapta a la altura de tabs */
     .tab-content {
         margin-top: 1rem; /* reducir espacio en móvil */
+        min-height: 60vh; /* Altura mínima menor en móvil */
     }
 }
 
