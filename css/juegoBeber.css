@@ -22,6 +22,11 @@
     color: #3498db;
     text-shadow: 2px 2px 8px #fff, 0 0 10px #3498db;
 }
+.titulo-festivo.quienesmas {
+    color: #27ae60;
+    text-shadow: 2px 2px 8px #fff, 0 0 10px #27ae60;
+    font-size: 2.5em !important
+}
 .label-festivo {
     font-family: 'Luckiest Guy', cursive;
     font-size: 1.3em;
@@ -85,6 +90,11 @@
 }
 .btn-siguiente.verdadreto{
     background-color:#3498db !important;
+    color: #fff !important;
+    border: none !important;
+}
+.btn-siguiente.quienesmas{
+    background-color:#27ae60 !important;
     color: #fff !important;
     border: none !important;
 }
@@ -325,6 +335,11 @@
 .btn-siguiente.verdadreto,
 .btn-empezar.verdadreto {
     background: linear-gradient(135deg, #3498db, #2980b9) !important;
+    color: white !important;
+}
+.btn-siguiente.quienesmas,
+.btn-empezar.quienesmas {
+    background: linear-gradient(135deg, #27ae60, #1e874b) !important;
     color: white !important;
 }
 

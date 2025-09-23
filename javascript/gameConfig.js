@@ -40,6 +40,20 @@ const gameConfigs = {
             { id: "verdad", value: "verdad", label: "Verdad", class: "clasico", colClass: "col-12 col-md-6" },
             { id: "reto", value: "reto", label: "Reto", class: "picante", colClass: "col-12 col-md-6" }
         ]
+    },
+    quienEsMas: {
+        title: "¿Quién es más probable que...?",
+        displayName: "¿Quién es más probable que...?",
+        themeClass: "quienesmas",
+        csvFile: "quienEsMas",
+        rules: `Se lee una situación y todos los jugadores apuntan a la vez a quien creen que es <b>más probable</b> que le pase o haga esa cosa.<br>
+                <b>Reglas:</b> La persona más señalada debe beber tantos tragos como personas la señalen.<br>
+                <i>En caso de empate, los empatados se reparten los tragos entre ellos.</i>`,
+        categories: [
+            { id: "general", value: "general", label: "General", class: "clasico", colClass: "col-12 col-md-4" },
+            { id: "picante", value: "picante", label: "Picante", class: "picante", colClass: "col-12 col-md-4" },
+            { id: "humor", value: "humor", label: "Humor", class: "humor", colClass: "col-12 col-md-4" }
+        ]
     }
 };
 
