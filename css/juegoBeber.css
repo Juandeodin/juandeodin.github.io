@@ -505,3 +505,19 @@
     color: white !important;
     text-decoration: none !important;
 }
+
+    /* ===================== Publicidad (Ads) ===================== */
+    body.bg-secondary.bg-opacity-10 { min-height: 100vh; }
+
+    /* Bloque debajo de Continuar */
+    #ad-below-continue.ad-below-continue { min-height: 90px; display: block; width:100%; }
+    @media (max-width: 576px) { #ad-below-continue.ad-below-continue { min-height: 60px; } }
+
+    /* Sidebars sólo escritorio */
+    .ad-sidebar { position: absolute; top: 0; bottom: 0; width: 160px; padding-top: 4.5rem; }
+    .ad-sidebar-left { left: -190px; }
+    .ad-sidebar-right { right: -190px; }
+    @media (max-width: 1200px) { .ad-sidebar { display: none !important; } }
+
+    /* Evitar layout shift reservando espacio */
+    .ad-sidebar ins, #ad-below-continue ins { width: 100% !important; min-height: 90px; }
